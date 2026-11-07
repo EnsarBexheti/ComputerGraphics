@@ -1,6 +1,5 @@
 import * as THREE from "three";
 import { OrbitControls } from "three/examples/jsm/controls/OrbitControls.js";
-// raycaster test
 
 const scene = new THREE.Scene();
 const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 100);
@@ -18,7 +17,7 @@ const d = n.dot(p);
 const geometry = new THREE.PlaneGeometry(12, 12);
 const material = new THREE.MeshBasicMaterial({color: 0x9c6d6d})
 const floor = new THREE.Mesh(geometry, material);
-floor.rotation.x = -Math.PI / 2; // rotate the plane to be horizontal
+floor.rotation.x = -Math.PI / 2;
 floor.updateMatrixWorld(true);
 const grid = new THREE.GridHelper(12,12)
 scene.add(floor, grid);

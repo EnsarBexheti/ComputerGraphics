@@ -46,14 +46,12 @@ cross: '',
 crossLength: '',
 angle: ''
 }
-//Folder for vector A
 const aFolder = gui.addFolder('A')
 aFolder.add(params, 'aX', -5, 5, 0.1).name('X').onChange(value => { a.x = value; updateVector() });
 aFolder.add(params, 'aY', -5, 5, 0.1).name('Y').onChange(value => { a.y = value; updateVector() });
 aFolder.add(params, 'aZ', -5, 5, 0.1).name('Z').onChange(value => { a.z = value; updateVector() });
 
 
-//Folder for vector B
 const bFolder = gui.addFolder('B')
 bFolder.add(params, 'bX', -5, 5, 0.1).name('X').onChange(value => { b.x = value; updateVector() });
 bFolder.add(params, 'bY', -5, 5, 0.1).name('Y').onChange(value => { b.y = value; updateVector() });
@@ -74,7 +72,6 @@ arrA.setLength(a.length(), 0.35, 0.3)
 arrB.setDirection(b.clone().normalize())
 arrB.setLength(b.length(), 0.35, 0.3)
 
-//a+b
 sum.addVectors(a, b)
 arrSum.setDirection(sum.clone().normalize())
 arrSum.setLength(sum.length(), 0.35, 0.3)

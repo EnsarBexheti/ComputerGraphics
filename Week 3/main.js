@@ -42,7 +42,6 @@ const moon = new THREE.Mesh(
 moon.position.x = 1.5
 moonOrbit.add(moon)
 
-// Mars orbits the Sun using its own pivot.
 const marsOrbit = new THREE.Object3D();
 sun.add(marsOrbit)
 
@@ -53,7 +52,6 @@ const mars = new THREE.Mesh(
 mars.position.x = 10
 marsOrbit.add(mars)
 
-// Phobos follows Mars while orbiting around it.
 const phobosOrbit = new THREE.Object3D();
 mars.add(phobosOrbit)
 
@@ -64,7 +62,6 @@ const phobos = new THREE.Mesh(
 phobos.position.x = 1.2
 phobosOrbit.add(phobos)
 
-// Saturn orbits the Sun using its own pivot.
 const saturnOrbit = new THREE.Object3D();
 sun.add(saturnOrbit)
 
@@ -75,7 +72,6 @@ const saturn = new THREE.Mesh(
 saturn.position.x = 15
 saturnOrbit.add(saturn)
 
-// Saturn Ring Geometry
 const saturnRing = new THREE.Mesh(
     new THREE.RingGeometry(1.6, 2.6, 64),
     new THREE.MeshBasicMaterial({ color: 0xc9b28a, side: THREE.DoubleSide })
