@@ -26,7 +26,21 @@ const loader = new GLTFLoader()
 loader.load('public/model.glb', (gltf) => {
     gltf.scene.rotation.y = Math.PI
     scene.add(gltf.scene);
-}); 
+
+    const meshes = []
+    gltf.scene.traverse((child) => {
+        if (child.isMesh) meshes.push(child)
+    })
+
+    console.log('Total meshes:', meshes.length)
+
+    meshes.forEach((mesh, i) => {
+        const geometry = mesh.geometry
+        const vertices = geometry.attributes.position.count
+        const faces = geometry.index ? geometry.index.count / 3 : vertices / 3
+        console.log(`Mesh ${i + 1}: ${mesh.name || 'unnamed'} | Vertices: ${vertices} | Faces: ${faces}`)
+    })
+});
 
 function animate() {
     requestAnimationFrame(animate)
